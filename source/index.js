@@ -88,7 +88,13 @@ cvr.getFileCoverage = function ( coverage, filePath )
         return c.file === filePath;
     } )[ 0 ];
 };
-
+cvr.getFileCoverage1 = function ( coverage, filePath )
+{
+    return coverage.filter( function ( c )
+    {
+        return c.file.indexOf(filePath) >= 0;
+    } )[ 0 ];
+};
 cvr.getLine = function ( lineCoverage, line )
 {
     var lineExecs = lineCoverage.filter( function ( c )
